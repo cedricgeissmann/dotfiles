@@ -1,0 +1,8 @@
+[global]
+    background = "#282828"
+    foreground = "#ebdbb2"
+    frame_width = 0
+    corner_radius = 5
+    padding = 20
+    horizontal_padding = 30
+    width = 360
