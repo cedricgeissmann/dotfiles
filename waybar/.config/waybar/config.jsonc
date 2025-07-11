@@ -1,0 +1,120 @@
+// -*- mode: jsonc -*-
+[{
+    "output": ["eDP-1"],
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 24, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "hyprland/language",
+        "idle_inhibitor",
+        "load",
+	    "wireplumber",
+        "backlight",
+        "battery",
+        "tray"
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "all-outputs": false,
+        "warp-on-scroll": false,
+        "enable-bar-scroll": true,
+        "disable-scroll-wraparound": true,
+        "persistent-workspaces": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10"
+        }
+    },
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 40,
+        "all-outputs": true
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "max-length": 2,
+        "format-en": "us",
+        "format-de": "ch",
+        "keyboard-name": "kanata"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-icons": ["奔", "墳"]
+    },
+    "hyprland/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "tray": {
+        "icon-size": 14,
+        "spacing": 10
+    },
+    "load": {
+        "format": " {}"
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%d.%m.%Y} {:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    }
+}]
